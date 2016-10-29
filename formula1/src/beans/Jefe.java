@@ -1,11 +1,14 @@
 package beans;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import utiles.BD;
 
-public class Jefes {
+public class Jefe implements Serializable {
+	private static final long serialVersionUID = 3328220426961921943L;
+	
 	String dniJefe;
     String nombreJefe;
     String password;
@@ -13,10 +16,10 @@ public class Jefes {
     boolean correcto = false;
     String error="";
 
-    public Jefes() {
+    public Jefe() {
     }
 
-    public Jefes(String dniJefe, String nombreJefe, String password, String foto) {
+    public Jefe(String dniJefe, String nombreJefe, String password, String foto) {
         this.dniJefe = dniJefe;
         this.nombreJefe = nombreJefe;
         this.password = password;
