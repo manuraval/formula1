@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class BD {
 	/**
-     * Establece una conexión con la base de datos de la aplicación
-     * @return la conexión
+     * Establece una conexion con la base de datos de la aplicación
+     * @return la conexion
      */
     public static Connection conectar() {
         Connection conexion = null;
