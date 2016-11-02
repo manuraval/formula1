@@ -8,7 +8,7 @@ body {
     background-image: url(../Images/inicio.jpg);
     
     /* El color del texto sera blanco por defecto */
-    color: white;
+    color: grey;
 
     background-position: center center;
 
