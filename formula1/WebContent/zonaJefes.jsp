@@ -109,19 +109,16 @@ h1 {
 					</div>
 			</div>
 			<div class="botones">
-				<!--<br><br><br><a href="pacienteNuevo.jsp" class="btn btn-primary btn-sm ">Dar de alta a un paciente</a>-->
+				<br><br><br><a href="pacienteNuevo.jsp" class="btn btn-primary btn-sm ">Dar de alta a un paciente</a>
 				<a href="medicoNuevo.jsp" class="btn btn-info btn-sm"><fmt:message
-						key="altaMedico" bundle="${mensajes}" /></a><br>
-				<br>
-				<br> <a href="consultarCitas.jsp" class="btn btn-info btn-sm">Consultar
-					Citas</a><br>
-				<br>
-				<br>
+						key="altaMedico" bundle="${mensajes}" /></a><br> <br> <br>
+				<a href="consultarCitas.jsp" class="btn btn-info btn-sm">Consultar
+					Citas</a><br> <br> <br>
 				</c:if>
 				<%-- Si el medico no es supervisor vera directamente las consultas --%>
 
 				<c:if test="${medic.supervisor == 0}">
-<%-- 					<jsp:include page="consultarCitas.jsp" /> --%>
+					<%-- 					<jsp:include page="consultarCitas.jsp" /> --%>
 				</c:if>
 
 			</div>
