@@ -6,15 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><fmt:message key="zonaMedico" bundle="${mensajes}" /></title>
-<link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+<title><fmt:message key="zonaJefes" bundle="${mensajes}" /></title>
+<link rel="shortcut icon" href="./Images/jefe.png" type="image/png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/zonaMedico.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="./Estilos/zonaJefes.css">
 
 <!-- Custom styles for this template -->
 
@@ -23,11 +22,10 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-<link rel="stylesheet" href="./Estilos/zonaJefes.css">
+
 
 </head>
 <body>
-
 	<jsp:include page="cabeceraJefes.jsp" />
 	<div class="container">
 		<c:set var="lm" value="${datos.getJefe()}" scope="session" />
