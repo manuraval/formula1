@@ -1,6 +1,6 @@
 body {
 	/* La imagen de fondo sera una imagen */
-	background-image: url(Images/jefeZ.jpg);
+	background-image: url(../Images/inicioJ.jpg);
 	
 	/* El color del texto sera blanco */
 	color: white;
@@ -36,7 +36,7 @@ a:hover {
 
 h1 {
 	font-size: 100px;
-	color: black;
+	color: white;
 }
 
 .footer {
@@ -45,4 +45,9 @@ h1 {
 	width: 100%;
 	/* Set the fixed height of the footer here */
 	height: 60px;
+}
+
+td {
+	font-size: 20px;
+	color: black;
 }

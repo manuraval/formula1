@@ -11,6 +11,8 @@ public class Jefe implements Serializable {
 	
 	String dniJefe;
     String nombreJefe;
+    String apellidos;
+    String sexo;
     String password;
     String foto;
     boolean correcto = false;
@@ -42,7 +44,23 @@ public class Jefe implements Serializable {
         this.nombreJefe = nombreJefe;
     }
 
-    public String getPassword() {
+    public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getPassword() {
         return password;
     }
 
