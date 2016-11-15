@@ -1,6 +1,6 @@
 body {
 	/* La imagen de fondo sera una imagen */
-	background-image: url(../Images/inicioJ.jpg);
+	background-image: url(../Images/inicioE.jpg);
 	
 	/* El color del texto sera blanco */
 	color: white;
@@ -25,8 +25,9 @@ body {
 }
 
 a {
-	color: black;
+	color: white;
 	cursor: pointer;
+	font-size: 20px;
 	text-decoration: none;
 }
 
@@ -49,5 +50,5 @@ h1 {
 
 td {
 	font-size: 20px;
-	color: black;
+	color: white;
 }

@@ -5,13 +5,13 @@
 
 <jsp:useBean id="jefe" class="beans.Jefe" scope="session"/>
 <jsp:useBean id="datos" class="beans.Administracion" scope="session"/>
-
+<jsp:useBean id="esc" class="beans.Escuderia" scope="session"></jsp:useBean>
 
 
 <!-- Comprobamos que el login y las contraseña son correctos -->
 <c:if test="${!empty param['login']}">
 
-    <c:set var="login" value="${jefe.identificar(param['login'], param['pass'])}" scope="session"/>
+    <c:set var="login" value="${esc.identificar(param['login'], param['pass'])}" scope="session"/>
 
     <c:choose>
         <c:when test="${login}">
@@ -44,20 +44,17 @@
     <body>
         
         <div class="container">
-
-
-            <div class="row col-md-offset-5">
+            <div class="row col-md-offset-2">
                 <div class="col-md-5 col-md-offset-0" style="padding-top: 20%">
-                    <form method="post" action="zonaJefes.jsp">
+                    <form method="post" action="zonaEsc.jsp">
                         <div class="form-group">
-                            <label for="login"><fmt:message key="dniJefe" bundle="${mensajes}"/></label><br>
+                            <label for="login"><fmt:message key="nombreEscuderia" bundle="${mensajes}"/></label><br>
                             <input class="form-control" type="text" id="login" name="login" required/><br>
                         </div>
                         <div class="form-group">
                             <label for="pass"><fmt:message key="contra" bundle="${mensajes}"/></label><br>
                             <input class="form-control" type="password" id="pass" name="pass" required/><br>
                         </div>
-                            <br>
                         <div class="form-group">
                             <input type="submit" class=" btn btn-info" name="entrar"  value="<fmt:message key="IniciarSession" bundle="${mensajes}"/>"/>
                        </div>
