@@ -1,6 +1,7 @@
 package beans;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,47 +11,12 @@ import java.util.List;
 import utiles.BD;
 
 public class Administracion {
-	// private String emailError = "";
-
+	
 	/**
 	 * 
-	 * Consulta de busqueda de un piloto
+	 * Consulta lista de Jefe
 	 *
-	 * @return boolean
-	 */
-	public List<Piloto> getPiloto(String jefe) {
-		List<Piloto> pilotos = new LinkedList<Piloto>();
-		Connection conexion = null;
-		try {
-			conexion = BD.conectar();
-			Statement consulta = conexion.createStatement();
-			ResultSet resultado = consulta.executeQuery(
-					"SELECT * FROM piloto JOIN escuderia\n" + "ON piloto.escuderia = escuderia.nombreEscuderia\n"
-							+ "JOIN jefe\n" + "ON escuderia.jefe = jefe.dniJefe\n" + "WHERE jefe = ?");
-			while (resultado.next()) {
-				Piloto piloto = new Piloto();
-				piloto.numPiloto = resultado.getString("numPiloto");
-				piloto.nombrePiloto = resultado.getString("nombrePiloto");
-				piloto.sueldo = resultado.getDouble("sueldo");
-				piloto.debut = resultado.getInt("debut");
-				piloto.mundiales = resultado.getInt("mundiales");
-				piloto.temporada = resultado.getString("temporada");
-				pilotos.add(piloto);
-
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			BD.desconectar(conexion);
-		}
-		return pilotos;
-	}
-
-	/**
-	 * 
-	 * Consulta lista de Medicos
-	 *
-	 * @return Una lista de Medicos.
+	 * @return Una lista de Jefe.
 	 */
 	public List<Jefe> getJefeEsc(String nombreEscuderia) {
 		List<Jefe> jefes = new LinkedList();
@@ -72,5 +38,36 @@ public class Administracion {
 		} catch (SQLException e) {
 		}
 		return jefes;
+	}
+	
+	/**
+	 * 
+	 * Consulta lista de Piloto
+	 *
+	 * @return Una lista de Piloto.
+	 */
+	public List<Piloto> getPilEsc(String nombreEscuderia) {
+		List<Piloto> pilotos = new LinkedList();
+		Connection conexion = null;
+		try {
+			conexion = BD.conectar();
+			Statement consulta = conexion.createStatement();
+			ResultSet resultado = consulta.executeQuery(
+					"SELECT nombrePiloto, numPiloto, sueldo, debut, mundiales, coche, temporada FROM piloto JOIN escuderia ON piloto.escuderia = escuderia.nombreEscuderia WHERE nombreEscuderia = '" + nombreEscuderia + "';");
+			if (resultado.next()) {
+				Piloto pil = new Piloto();
+				pil.numPiloto = resultado.getString("numPiloto");
+				pil.nombrePiloto = resultado.getString("nombrePiloto");
+				pil.sueldo = resultado.getDouble("sueldo");
+				pil.debut = resultado.getInt("debut");
+				pil.mundiales = resultado.getInt("mundiales");
+				pil.coche.nombreCoche = resultado.getString("coche");
+				pil.temporada = resultado.getString("temporada");
+				pilotos.add(pil);
+			}
+			BD.desconectar(conexion);
+		} catch (SQLException e) {
+		}
+		return pilotos;
 	}
 }
