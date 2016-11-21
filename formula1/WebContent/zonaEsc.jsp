@@ -12,8 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="./Estilos/zonaJefes.css">
 
 <!-- Custom styles for this template -->
@@ -46,12 +45,6 @@
 						
 						<%--Recorremos la lista y mostramos los medicos--%>
 						<c:forEach items="${lje}" var="j">
-							<fieldset>
-						<label>Nombre Jefe:</label> <b><a href="modificarJefe.jsp?aux=${aux}"><c:out value="${j.getNombreJefe()}, ${j.getApellidos()} " /></a></b>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>DNI: </label><b><c:out value="${j.getDniJefe()}" /></b>&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Sexo: </label><b><c:out value="${j.getSexo()}" /></b>
-						</fieldset>
-						<br><br>
 							<tr class="table-hover">
 								<td><b><a href="modificarJefe.jsp?aux=${aux}"><c:out value="${j.getNombreJefe()}" /></a></b></td>
 								<td><b><c:out value="${j.getApellidos()}" /></b></td>
