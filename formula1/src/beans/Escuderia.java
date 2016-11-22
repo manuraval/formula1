@@ -11,7 +11,7 @@ public class Escuderia implements Serializable {
 	private static final long serialVersionUID = 3044971465512147802L;
 	
 	String nombreEscuderia;
-    int añoFundacion;
+    int anoFundacion;
     String pais;
     Jefe jefe;
     String password;
@@ -22,10 +22,10 @@ public class Escuderia implements Serializable {
     public Escuderia() {
     }
 
-    public Escuderia(String nombreEscuderia, int añoFundacion, String pais, Jefe jefe, String password, String foto) {
+    public Escuderia(String nombreEscuderia, int anoFundacion, String pais, Jefe jefe, String password, String foto) {
 		super();
 		this.nombreEscuderia = nombreEscuderia;
-		this.añoFundacion = añoFundacion;
+		this.anoFundacion = anoFundacion;
 		this.pais = pais;
 		this.jefe = jefe;
 		this.password = password;
@@ -40,12 +40,12 @@ public class Escuderia implements Serializable {
 		this.nombreEscuderia = nombreEscuderia;
 	}
 
-	public int getAñoFundacion() {
-		return añoFundacion;
+	public int getAÃ±oFundacion() {
+		return anoFundacion;
 	}
 
-	public void setAñoFundacion(int añoFundacion) {
-		this.añoFundacion = añoFundacion;
+	public void setAÃ±oFundacion(int anoFundacion) {
+		this.anoFundacion = anoFundacion;
 	}
 
 	public String getPais() {
@@ -82,7 +82,7 @@ public class Escuderia implements Serializable {
 
 	@Override
     public String toString() {
-        return "Escuderia{" + "nombreEscuderia=" + nombreEscuderia + ", aÃ±oFundacion=" + añoFundacion + ", pais=" + pais + ", jefe=" + jefe + '}';
+        return "Escuderia{" + "nombreEscuderia=" + nombreEscuderia + ", aÃ±oFundacion=" + anoFundacion + ", pais=" + pais + ", jefe=" + jefe + '}';
     }
     
     public boolean identificar(String login, String password) {
@@ -98,7 +98,7 @@ public class Escuderia implements Serializable {
                       correcto=true;
                      
                        setNombreEscuderia(login);
-                       setAñoFundacion(resultado.getInt("añoFundacion"));
+                       setAÃ±oFundacion(resultado.getInt("aÃ±oFundacion"));
                        setPassword(resultado.getString("password"));
                        setPais(resultado.getString("pais"));
                        error="";
