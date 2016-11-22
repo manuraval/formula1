@@ -30,8 +30,9 @@
 	<jsp:include page="cabeceraEsc.jsp" />
 	<div class="container">
 			<c:set var="aux" value="${0}" />
-			<c:set var="lpe" value="${datos.getPilEsc(esc2.nombreEscuderia)}" scope="session" />
+			<c:set var="lpe" value="${pil.getPilEsc(esc2.nombreEscuderia)}" scope="session" />
 			<c:set var="lje" value="${datos.getJefeEsc(esc.nombreEscuderia)}" scope="session" />
+			<c:set var="lme" value="${mecanic.getMecEsc(esc.nombreEscuderia)}" scope="session" />
 			
 			<h3 align="center">Jefe</h3>
 			<div id="tabla">
@@ -61,6 +62,41 @@
 			</div>
 			<br>
 			<h3 align="center">Pilotos</h3>
+			<div id="tabla">
+			
+				<c:if test="${!empty lpe}">
+					<table class="table">
+
+						<th><fmt:message key="nombre" bundle="${mensajes}" /></th>
+						<th><fmt:message key="numPiloto" bundle="${mensajes}" /></th>
+						<th><fmt:message key="debut" bundle="${mensajes}" /></th>
+						<th><fmt:message key="mundiales" bundle="${mensajes}" /></th>
+						<th><fmt:message key="sueldo" bundle="${mensajes}" /></th>
+						<th><fmt:message key="coche" bundle="${mensajes}" /></th>
+						<th><fmt:message key="temporada" bundle="${mensajes}" /></th>
+
+						<%--Recorremos la lista y mostramos los medicos--%>
+						<c:forEach items="${lpe}" var="p">
+
+							<tr class="table-hover">
+								<td><b><a href="modificarPiloto.jsp?aux=${aux}"><c:out value="${p.getNombrePiloto()}" /></a></b></td>
+								<td><b><c:out value="${p.getNumPiloto()}" /></b></td>
+								<td><b><c:out value="${p.getDebut()}" /></b></td>
+								<td><b><c:out value="${p.getMundiales()}" /></b></td>
+								<td><b><c:out value="${p.getSueldo()}" /></b></td>
+								<td><b><c:out value="${p.getCoche()}" /></b></td>
+								<td><b><c:out value="${p.getTemporada()}" /></b></td>
+							</tr>
+							<c:set var="aux" value="${aux+1}" />
+						</c:forEach>
+						</c:if>
+					</table>
+					<c:if test="${empty lpe}">
+						<h4 align=center>No se ha encontrado pilotos</h4>
+					</c:if>
+					<a href="nuevoPiloto.jsp" class="btn btn-info btn-sm"><fmt:message key="nuevoPiloto" bundle="${mensajes}" /></a>
+			</div>
+			<h3 align="center">Mecanicos</h3>
 			<div id="tabla">
 			
 				<c:if test="${!empty lpe}">

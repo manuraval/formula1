@@ -6,8 +6,8 @@
 <jsp:useBean id="jefe" class="beans.Jefe" scope="session"/>
 <jsp:useBean id="datos" class="beans.Administracion" scope="session"/>
 <jsp:useBean id="esc" class="beans.Escuderia" scope="session"/>
-<jsp:useBean id="esc2" class="beans.Escuderia" scope="session"/>
 <jsp:useBean id="pil" class="beans.Piloto" scope="session"/>
+<jsp:useBean id="mecanic" class="beans.Mecanico" scope="session"/>
 
 <!-- Comprobamos que el login y las contraseña son correctos -->
 <c:if test="${!empty param['login']}">
