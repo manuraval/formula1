@@ -23,30 +23,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+<link rel="shortcut icon" href="./Images/piloto.png" type="image/png" />
 <title><fmt:message key="nuevoPiloto" bundle="${mensajes}" /></title>
-<link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="./Estilos/nuevoPiloto.css">
 
-<!-- Custom styles for this template -->
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-<style>
-</style>
 <script src="./js/jquery-2.2.1.min.js"></script>
 <script src="./dist/jquery.validate.min.js"></script>
 <script src="./dist/additional-methods.min.js"></script>
@@ -66,7 +52,7 @@
                     }, "El formato es 00/00/00000");
 
                     $("#formulario").validate({
-    // Reglas
+    				// Reglas
                         rules: {
                             nColegiado: {required: true, metodonumerocolegiado: true},
                             nombre: {required: true, metodonombre: true, maxlength: 20},
@@ -76,7 +62,7 @@
 
                         },
                         messages: {
-    //Mensajes
+    				//Mensajes
                             nColegiado: {required: 'El campo es obligatorio', errorClass: "error"},
                             nombre: {required: 'El campo es obligatorio', errorClass: "error"},
                             apellidos: {required: 'El campo es obligatorio', errorClass: "error"},
@@ -132,7 +118,7 @@
 						<br>
 						<div class="form-group">
 							<input type="submit" class="btn btn-info" id="mod" name="registrar" value="<fmt:message key="registrarPiloto" bundle="${mensajes}"/>" />
-							<a href="zonaEsc.jsp" class="btn btn-info col-md-offset-8"><fmt:message key="atras" bundle="${mensajes}" /></a>
+							<a href="zonaEsc.jsp" class="btn btn-info"><fmt:message key="atras" bundle="${mensajes}" /></a>
 						</div>
 					</form>
 				</div>

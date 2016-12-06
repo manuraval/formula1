@@ -11,7 +11,7 @@
 		<div class="col-md-12">
 			<h2 class="col-md-offset-5">
 				<b>${esc.nombreEscuderia} (${esc.pais})</b><br>
-				<b id="subtitulo">Año de fundacion:  ${esc.añoFundacion}</b>
+				<b id="subtitulo">Año de fundacion:  ${esc.anoFundacion}</b>
 				<form action="cerrarSesion.jsp" method="post">
 					<input class="btn btn-warning col-md-offset-10" type="submit"
 						value="<fmt:message key="cerrarSesion" bundle="${mensajes}"/>" />

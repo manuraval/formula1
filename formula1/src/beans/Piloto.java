@@ -1,5 +1,14 @@
 package beans;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
+import utiles.BD;
+
 public class Piloto {
 	String numPiloto;
     String nombrePiloto;
@@ -90,6 +99,37 @@ public class Piloto {
 
     @Override
     public String toString() {
-        return "Piloto{" + "numPiloto=" + numPiloto + ", nombrePiloto=" + nombrePiloto + ", sueldo=" + sueldo + ", debut=" + debut + ", mundiales=" + mundiales + ", escuderia=" + escuderia + ", coche=" + coche + ", temporada=" + temporada + '}';
+        return "Piloto{" + "numPiloto=" + numPiloto + ", nombrePiloto=" + nombrePiloto + ", sueldo=" + sueldo + ", debut=" + debut + ", mundiales=" + mundiales + ", escuderia=" + escuderia.nombreEscuderia + ", coche=" + coche.nombreCoche + ", temporada=" + temporada + '}';
     }
+    
+    /**
+	 * 
+	 * Consulta lista de Piloto
+	 *
+	 * @return Una lista de Piloto.
+	 */
+	public List<Piloto> getPilEsc(Escuderia nombreEscuderia) {
+		List<Piloto> pilotos = new LinkedList();
+		Connection conexion = null;
+		try {
+			conexion = BD.conectar();
+			Statement consulta = conexion.createStatement();
+			ResultSet resultado = consulta.executeQuery(
+					"SELECT nombrePiloto, numPiloto, sueldo, debut, mundiales, coche, temporada FROM piloto JOIN escuderia ON piloto.escuderia = escuderia.nombreEscuderia WHERE escuderia = '" + nombreEscuderia + "';");
+			if (resultado.next()) {
+				Piloto pil = new Piloto();
+				pil.numPiloto = resultado.getString("numPiloto");
+				pil.nombrePiloto = resultado.getString("nombrePiloto");
+				pil.sueldo = resultado.getDouble("sueldo");
+				pil.debut = resultado.getInt("debut");
+				pil.mundiales = resultado.getInt("mundiales");
+				pil.coche.nombreCoche = resultado.getString("coche");
+				pil.temporada = resultado.getString("temporada");
+				pilotos.add(pil);
+			}
+			BD.desconectar(conexion);
+		} catch (SQLException e) {
+		}
+		return pilotos;
+	}
 }

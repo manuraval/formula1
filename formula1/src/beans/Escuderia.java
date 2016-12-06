@@ -40,11 +40,11 @@ public class Escuderia implements Serializable {
 		this.nombreEscuderia = nombreEscuderia;
 	}
 
-	public int getAñoFundacion() {
+	public int getAnoFundacion() {
 		return anoFundacion;
 	}
 
-	public void setAñoFundacion(int anoFundacion) {
+	public void setAnoFundacion(int anoFundacion) {
 		this.anoFundacion = anoFundacion;
 	}
 
@@ -98,7 +98,7 @@ public class Escuderia implements Serializable {
                       correcto=true;
                      
                        setNombreEscuderia(login);
-                       setAñoFundacion(resultado.getInt("añoFundacion"));
+                       setAnoFundacion(resultado.getInt("a�oFundacion"));
                        setPassword(resultado.getString("password"));
                        setPais(resultado.getString("pais"));
                        error="";
