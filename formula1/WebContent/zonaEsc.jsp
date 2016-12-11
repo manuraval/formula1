@@ -34,9 +34,7 @@
  	
   <div align="center" class="embed-responsive embed-responsive-4by3">  
   <h2 align="left">Documental</h2>  
-      <video controls class="embed-responsive-item">  
-          <source src="./Videos/Documental.mp4" type="video/mp4">  
-      </video>  
+      <video controls class="embed-responsive-item" src="./Videos/Documental.mp4"/>
   </div>  
   </div>  
 

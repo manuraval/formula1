@@ -28,8 +28,8 @@
           <ul class="dropdown-menu">
             <li><a href="#">Informacion</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="Pilotos.jsp">Pilotos</a></li>
-            <li><a href="#">Mecanicos</a></li>
+            <li><a href="pilotos.jsp">Pilotos</a></li>
+            <li><a href="mecanicos.jsp">Mecanicos</a></li>
           </ul>
         </li>
            <li class="active"><a href="#">Noticias <span class="sr-only">(current)</span></a></li>
