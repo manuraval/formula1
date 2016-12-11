@@ -32,6 +32,22 @@ public class Escuderia implements Serializable {
 		this.foto = foto;
 	}
 
+	public boolean isCorrecto() {
+		return correcto;
+	}
+
+	public void setCorrecto(boolean correcto) {
+		this.correcto = correcto;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
+
 	public String getNombreEscuderia() {
 		return nombreEscuderia;
 	}
@@ -110,4 +126,32 @@ public class Escuderia implements Serializable {
           }
           return correcto;
       }
+    
+    /**
+     * 
+     * Consulta cambiar la foto de una escuderia
+     *
+     * 
+     * @param nombreEscuderia
+    */
+     public void cambiarFoto(String nombreEscuderia) {
+        String actualizacion;
+        
+        try {  
+           actualizacion = "update escuderia set foto=? where nombreEscuderia=?";
+            Connection conexion = BD.conectar();
+            PreparedStatement actualizar = conexion.prepareStatement(actualizacion);
+           
+            actualizar.setString(1, foto);
+            actualizar.setString(2, nombreEscuderia);
+
+            System.out.println(actualizacion);
+            actualizar.execute();
+            BD.desconectar(conexion);
+        } catch (Exception e) {
+            error = "No se ha podido actualizar";
+            System.out.println(e.getMessage());
+        }
+
+    }
 }

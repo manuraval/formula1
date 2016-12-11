@@ -1,6 +1,6 @@
 body {
 	/* La imagen de fondo sera una imagen */
-	background-image: url(../Images/inicioE.jpg);
+	background-image: url(../Images/fondo.jpg);
 	
 	/* El color del texto sera blanco */
 	color: white;
@@ -40,6 +40,10 @@ h1 {
 	color: white;
 }
 
+h2{
+	color: #24DAEC;
+}
+
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -48,9 +52,10 @@ h1 {
 	height: 60px;
 }
 
-td {
+.fila tr{
 	font-size: 20px;
-	color: white;
+	color: black;
+	background-color: white;
 }
 
 label {
@@ -61,4 +66,9 @@ label {
 b{
 	font-size: 20px;
 	color: white;
+}
+
+p{
+	font-size: 14pt;
+	font-family: sans-serif;
 }

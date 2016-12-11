@@ -10,16 +10,16 @@
 <jsp:useBean id="mecanic" class="beans.Mecanico" scope="session"/>
 
 <!-- Comprobamos que el login y las contraseña son correctos -->
-<c:if test="${!empty param['login']}">
+<%-- <c:if test="${!empty param['login']}"> --%>
 
-    <c:set var="login" value="${esc.identificar(param['login'], param['pass'])}" scope="session"/>
+<%--     <c:set var="login" value="${esc.identificar(param['login'], param['pass'])}" scope="session"/> --%>
 
-    <c:choose>
-        <c:when test="${login}">
-            <jsp:forward page="index.jsp"/>
-        </c:when>
-    </c:choose> 
-</c:if>
+<%--     <c:choose> --%>
+<%--         <c:when test="${login}"> --%>
+<%--             <jsp:forward page="index.jsp"/> --%>
+<%--         </c:when> --%>
+<%--     </c:choose>  --%>
+<%-- </c:if> --%>
 
 <html>
     <head>
@@ -51,16 +51,22 @@
                         <div class="form-group">
                             <input type="submit" class=" btn btn-info" name="entrar"  value="<fmt:message key="IniciarSession" bundle="${mensajes}"/>"/>
                        </div>
-                        <c:if test="${!empty param['login']}">
-                            <c:if test="${!empty jefe.error}">
-                                <div class="alert alert-danger alert-dismissable" id="error" >
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>¡Error!</strong> <fmt:message key="error" bundle="${mensajes}"/>   
-                                </div>
-                            </c:if>
-                        </c:if>
-
-                    </form>
+<%--                         <c:if test="${!empty param['login']}"> --%>
+<%--                             <c:if test="${!empty esc.error}"> --%>
+<!--                                 <div class="alert alert-danger alert-dismissable" id="error" > -->
+<!--                                     <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+<%--                                     <strong>¡Error!</strong> <fmt:message key="error" bundle="${mensajes}"/>    --%>
+<!--                                 </div> -->
+<%--                             </c:if> --%>
+<%--                         </c:if> --%>
+					<c:if test="${!empty esc.error}">
+						<div class="alert alert-danger alert-dismissable" id="error">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>¡Error!</strong>
+							<fmt:message key="error" bundle="${mensajes}" />
+						</div>
+					</c:if>
+				</form>
                 </div>
             </div>
         </div>      

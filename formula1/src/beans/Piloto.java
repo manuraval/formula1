@@ -108,22 +108,22 @@ public class Piloto {
 	 *
 	 * @return Una lista de Piloto.
 	 */
-	public List<Piloto> getPilEsc(Escuderia nombreEscuderia) {
+	public List<Piloto> getPilEsc(String nombreEscuderia) {
 		List<Piloto> pilotos = new LinkedList();
 		Connection conexion = null;
 		try {
 			conexion = BD.conectar();
 			Statement consulta = conexion.createStatement();
 			ResultSet resultado = consulta.executeQuery(
-					"SELECT nombrePiloto, numPiloto, sueldo, debut, mundiales, coche, temporada FROM piloto JOIN escuderia ON piloto.escuderia = escuderia.nombreEscuderia WHERE escuderia = '" + nombreEscuderia + "';");
-			if (resultado.next()) {
+					"SELECT nombrePiloto, numPiloto, sueldo, debut, mundiales, coche, temporada FROM piloto JOIN escuderia ON piloto.escuderia = escuderia.nombreEscuderia WHERE nombreEscuderia = '" + nombreEscuderia + "';");
+			while (resultado.next()) {
 				Piloto pil = new Piloto();
 				pil.numPiloto = resultado.getString("numPiloto");
 				pil.nombrePiloto = resultado.getString("nombrePiloto");
 				pil.sueldo = resultado.getDouble("sueldo");
 				pil.debut = resultado.getInt("debut");
 				pil.mundiales = resultado.getInt("mundiales");
-				pil.coche.nombreCoche = resultado.getString("coche");
+				// pil.coche.nombreCoche = resultado.getString("coche");
 				pil.temporada = resultado.getString("temporada");
 				pilotos.add(pil);
 			}

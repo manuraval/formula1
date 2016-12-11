@@ -111,28 +111,28 @@ public class Mecanico implements Serializable {
 	 *
 	 * @return Una lista de Piloto.
 	 */
-	public List<Piloto> getMecEsc(String nombreEscuderia) {
-		List<Piloto> pilotos = new LinkedList();
+	public List<Mecanico> getMecEsc(String nombreEscuderia) {
+		List<Mecanico> mecanicos = new LinkedList();
 		Connection conexion = null;
 		try {
 			conexion = BD.conectar();
 			Statement consulta = conexion.createStatement();
 			ResultSet resultado = consulta.executeQuery(
-					"SELECT nombrePiloto, numPiloto, sueldo, debut, mundiales, coche, temporada FROM piloto JOIN escuderia ON piloto.escuderia = escuderia.nombreEscuderia WHERE nombreEscuderia = '" + nombreEscuderia + "';");
-			if (resultado.next()) {
-				Piloto pil = new Piloto();
-				pil.numPiloto = resultado.getString("numPiloto");
-				pil.nombrePiloto = resultado.getString("nombrePiloto");
-				pil.sueldo = resultado.getDouble("sueldo");
-				pil.debut = resultado.getInt("debut");
-				pil.mundiales = resultado.getInt("mundiales");
-				pil.coche.nombreCoche = resultado.getString("coche");
-				pil.temporada = resultado.getString("temporada");
-				pilotos.add(pil);
+					"SELECT dniMecanico, cargo, nombreMecanico, sueldo, contrato, coche, temporada FROM mecanico JOIN escuderia ON mecanico.escuderia = escuderia.nombreEscuderia WHERE nombreEscuderia = '" + nombreEscuderia + "';");
+			while (resultado.next()) {
+				Mecanico mec = new Mecanico();
+				mec.dniMecanico = resultado.getString("dniMecanico");
+				mec.cargo = resultado.getString("cargo");
+				mec.sueldo = resultado.getDouble("sueldo");
+				mec.nombreMecanico = resultado.getString("nombreMecanico");
+				mec.contrato = resultado.getDate("contrato");
+				// mec.coche.nombreCoche = resultado.getString("coche.nombreCoche");
+				mec.temporada = resultado.getString("temporada");
+				mecanicos.add(mec);
 			}
 			BD.desconectar(conexion);
 		} catch (SQLException e) {
 		}
-		return pilotos;
+		return mecanicos;
 	}
 }
