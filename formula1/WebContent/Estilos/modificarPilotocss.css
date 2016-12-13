@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+body {
+	background-image: url(Images/modificarPil.jpg);
+	color: black;
+	background-position: center center;
+	/* La imagen de fondo no se repite */
+	background-repeat: no-repeat;
+	/* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+                   la altura del contenido supere la altura de la imagen. */
+	background-attachment: fixed;
+	/* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+                   del navegador */
+	background-size: cover;
+	/* Fijamos un color de fondo para que se muestre mientras se está
+                  cargando la imagen de fondo o si hay problemas para cargarla  */
+	background-color: #F4F4F4;
+}
+
+#formu {
+	padding: 2%;
+	background-image: url(Images/black30.png);
+	color: white;
+	background-position: center center;
+	/* La imagen de fondo no se repite */
+	background-repeat: no-repeat;
+	/* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+                   la altura del contenido supere la altura de la imagen. */
+	background-attachment: fixed;
+	/* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+                   del navegador */
+	background-size: cover;
+
+	/* Fijamos un color de fondo para que se muestre mientras se está
+                  cargando la imagen de fondo o si hay problemas para cargarla  */
+}
+
+.error {
+	color: red;
+}

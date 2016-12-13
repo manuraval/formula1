@@ -9,12 +9,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><fmt:message key="pilotos" bundle="${mensajes}" /></title>
 <link rel="shortcut icon" href="./Images/formula1.gif" type="image/gif" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Hoja de estilos para esta ventana -->
 <link rel="stylesheet" href="./Estilos/zonaJefes.css">
 </head>
 <body>
