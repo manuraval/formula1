@@ -5,8 +5,8 @@
 <c:if test="${!empty param['esc.nombreEscuderia']}">
 
 	<c:set var="pilotn"
-		value="${datos.medicoNuevo(param['nColegiado'],param['nombre'], param['apellidos'], param['especialidad'],
-                                 param['sexo'], 'default.gif' , param['supervisor'], param['password'])}"
+		value="${datos.nuevoPiloto(param['numPiloto'],param['nombre'], param['sueldo'], param['debut'],
+                                 param['mundiales'], esc.nombreEscuderia , param['temporada'])}"
 		scope="page" />
 
 	<c:if test="${pilotn == false}">
@@ -86,7 +86,7 @@
 		<div class="row">
 			<div class="col-md-offset-0">
 				<div id="formu" class="img-rounded">
-					<form method="post" id="formulario" action="medicoNuevo.jsp">
+					<form method="post" id="formulario" action="nuevoPiloto.jsp">
 						<div class="form-group">
 							<label for="numPiloto"><fmt:message key="numPiloto" bundle="${mensajes}" /></label> <input style="text-align: center;"
 								class="form-control" type="text" id="numPiloto" name="numPiloto" required placeholder="Nº de Piloto"/><br>
@@ -106,10 +106,6 @@
 						<div class="form-group">
 							<label for="mundiales"><fmt:message key="mundiales" bundle="${mensajes}" /></label> <input style="text-align: center;"
 								class="form-control" type="number" id="mundiales" name="mundiales" required placeholder="Nª de mundiales del piloto"/><br>
-						</div>
-						<div class="form-group">
-							<label for="coche"><fmt:message key="coche" bundle="${mensajes}" /></label> <input style="text-align: center;"
-								class="form-control" type="text" id="coche" name="coche" required placeholder="Coche del piloto"/><br>
 						</div>
 						<div class="form-group">
 							<label for="temporada"><fmt:message key="temporada" bundle="${mensajes}" /></label> <input style="text-align: center;"

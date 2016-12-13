@@ -12,7 +12,7 @@ import utiles.BD;
 public class Piloto {
 	String numPiloto;
     String nombrePiloto;
-    double sueldo;
+    int sueldo;
     int debut;
     int mundiales;
     Escuderia escuderia;
@@ -22,7 +22,7 @@ public class Piloto {
     public Piloto() {
     }
 
-    public Piloto(String numPiloto, String nombrePiloto, double sueldo, int debut, int mundiales, Escuderia escuderia, Coche coche, String temporada) {
+    public Piloto(String numPiloto, String nombrePiloto, int sueldo, int debut, int mundiales, Escuderia escuderia, Coche coche, String temporada) {
         this.numPiloto = numPiloto;
         this.nombrePiloto = nombrePiloto;
         this.sueldo = sueldo;
@@ -49,11 +49,11 @@ public class Piloto {
         this.nombrePiloto = nombrePiloto;
     }
 
-    public double getSueldo() {
+    public int getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -120,7 +120,7 @@ public class Piloto {
 				Piloto pil = new Piloto();
 				pil.numPiloto = resultado.getString("numPiloto");
 				pil.nombrePiloto = resultado.getString("nombrePiloto");
-				pil.sueldo = resultado.getDouble("sueldo");
+				pil.sueldo = resultado.getInt("sueldo");
 				pil.debut = resultado.getInt("debut");
 				pil.mundiales = resultado.getInt("mundiales");
 				// pil.coche.nombreCoche = resultado.getString("coche");

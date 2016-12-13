@@ -34,7 +34,7 @@
  	
   <div align="center" class="embed-responsive embed-responsive-4by3">  
   <h2 align="left">Documental</h2>  
-      <video controls class="embed-responsive-item" src="./Videos/Documental.mp4"/>
+      <video controls class="embed-responsive-item" src="./Videos/Documental.mp4" width="300px" height="200px"/>
   </div>  
   </div>  
 
@@ -75,41 +75,7 @@
 <!--   			</div>   -->
 <!--   			<br>   -->
   			 
-<!--   			<h3 align="center">Mecanicos</h3>   -->
-<!--   			<div id="tabla">   -->
-			
-<%--   				<c:if test="${!empty lme}">   --%>
-<!--   					<table class="table">   -->
 
-<%--   						<th><fmt:message key="nombre" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="dni" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="cargo" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="sueldo" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="contrato" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="coche" bundle="${mensajes}" /></th>   --%>
-<%--   						<th><fmt:message key="temporada" bundle="${mensajes}" /></th>   --%>
-
-<!-- <!--   						Recorremos la lista y mostramos los medicos   -->
-<%--   						<c:forEach items="${lme}" var="m">   --%>
-
-<!--   							<tr class="table-hover">   -->
-<%--   								<td><b><a href="modificarMecanico.jsp?aux=${aux}"><c:out value="${m.getNombreMecanico()}" /></a></b></td>   --%>
-<%--   								<td><b><c:out value="${m.getDniMecanico()}" /></b></td>   --%>
-<%--   								<td><b><c:out value="${m.getCargo()}" /></b></td>   --%>
-<%--   								<td><b><c:out value="${m.getSueldo()}" />€</b></td>   --%>
-<%--   								<td><b><c:out value="${m.getContrato()}" /></b></td>   --%>
-<%--   								<td><b><c:out value="${m.getCoche()}" /></b></td>   --%>
-<%--   								<td><b><c:out value="${m.getTemporada()}" /></b></td>   --%>
-<!--   							</tr>   -->
-<%--   							<c:set var="aux" value="${aux+1}" />   --%>
-<%--   						</c:forEach>   --%>
-<%--   						</c:if>   --%>
-<!--   					</table>   -->
-<%--   					<c:if test="${empty lme}">   --%>
-<!--   						<h4 align=center>No se ha encontrado mecanicos</h4>   -->
-<%--   					</c:if>   --%>
-<%--   					<a href="nuevoMecanico.jsp" class="col-md-offset-10 btn btn-info btn-sm"><fmt:message key="nuevoMecanico" bundle="${mensajes}" /></a>   --%>
-<!--   			</div>   -->
         </c:when>
         <c:otherwise>
 			<jsp:forward page="index.jsp"></jsp:forward>        

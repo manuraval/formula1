@@ -47,9 +47,12 @@
                         <div class="form-group">
                             <label for="pass"><fmt:message key="contra" bundle="${mensajes}"/></label><br>
                             <input class="form-control" type="password" id="pass" name="pass" required/><br>
+                            <a href="#" id="passOl">¿Ha olvidado su contraseña?</a>
                         </div>
+                        
                         <div class="form-group">
                             <input type="submit" class=" btn btn-info" name="entrar"  value="<fmt:message key="IniciarSession" bundle="${mensajes}"/>"/>
+                            <input type="button" class=" btn btn-warning" name="registrar"  value="<fmt:message key="Registrar" bundle="${mensajes}"/>"/>
                        </div>
 <%--                         <c:if test="${!empty param['login']}"> --%>
 <%--                             <c:if test="${!empty esc.error}"> --%>

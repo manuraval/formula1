@@ -39,4 +39,68 @@ public class Administracion {
 		}
 		return jefes;
 	}
+	
+    /**
+     * 
+     * Consulta de busqueda de un medico
+     *
+     * @return boolean
+     */
+
+    public boolean buscarPiloto(String numPiloto) {
+
+        boolean encontrado = false;
+
+        System.out.println("Buscando piloto " + numPiloto);
+        Connection con = BD.conectar();
+        try {
+            PreparedStatement ps = con.prepareStatement("select * from piloto where numPiloto=?");
+            ps.setString(1, numPiloto);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                
+                encontrado = true;
+
+            }
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            BD.desconectar(con);
+        }
+        return encontrado;
+    }
+    
+	public boolean nuevoPiloto(String numPiloto, String nombre, int sueldo, int debut, int mundiales, String nombreEscuderia, String temporada) {
+        boolean exito = false;
+        try {
+
+            if (buscarPiloto(numPiloto)) {
+                exito = false;
+            } else {
+
+                String inser = "insert into piloto value (?,?,?,?,?,?,?);";
+
+                Connection conexion = BD.conectar();
+                PreparedStatement nuevo = conexion.prepareStatement(inser);
+                nuevo.setString(1, numPiloto);
+                nuevo.setString(2, nombre);
+                nuevo.setInt(3, sueldo);
+                nuevo.setInt(4, debut);
+                nuevo.setInt(5, mundiales);
+                nuevo.setString(6, nombreEscuderia);
+                nuevo.setString(7, temporada);
+
+                nuevo.execute();
+
+                BD.desconectar(conexion);
+                exito = true;
+            }
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+        return exito;
+    }
 }

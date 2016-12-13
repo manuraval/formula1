@@ -17,7 +17,7 @@ public class Mecanico implements Serializable {
 	String dniMecanico;
     String cargo;
     String nombreMecanico;
-    double sueldo;
+    int sueldo;
     Date contrato;
     Coche coche;
     Escuderia escuderia;
@@ -26,7 +26,7 @@ public class Mecanico implements Serializable {
     public Mecanico() {
     }
 
-    public Mecanico(String dniMecanico, String cargo, String nombreMecanico, double sueldo, Coche coche, Escuderia escuderia, String temporada) {
+    public Mecanico(String dniMecanico, String cargo, String nombreMecanico, int sueldo, Coche coche, Escuderia escuderia, String temporada) {
         this.dniMecanico = dniMecanico;
         this.cargo = cargo;
         this.nombreMecanico = nombreMecanico;
@@ -60,11 +60,11 @@ public class Mecanico implements Serializable {
         this.nombreMecanico = nombreMecanico;
     }
 
-    public double getSueldo() {
+    public int getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -123,7 +123,7 @@ public class Mecanico implements Serializable {
 				Mecanico mec = new Mecanico();
 				mec.dniMecanico = resultado.getString("dniMecanico");
 				mec.cargo = resultado.getString("cargo");
-				mec.sueldo = resultado.getDouble("sueldo");
+				mec.sueldo = resultado.getInt("sueldo");
 				mec.nombreMecanico = resultado.getString("nombreMecanico");
 				mec.contrato = resultado.getDate("contrato");
 				// mec.coche.nombreCoche = resultado.getString("coche.nombreCoche");
