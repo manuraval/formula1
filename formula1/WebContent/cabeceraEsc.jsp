@@ -48,26 +48,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<!-- 	<div class="row"> -->
-<!-- 		<div class="col-md-12"> -->
-<!-- 			<h2> -->
-<!-- 				<div class="col-md-3-offset-9"> -->
-<!-- 					<form action="cambiarFoto.jsp" method="post" -->
-<!-- 						accept-charset="iso-8859-1"> -->
-<!-- 						<input class="img-thumbnail img-responsive" type="image" -->
-<%-- 							src="img/${esc.foto}" --%>
-<%-- 							title="<fmt:message key="pulse" bundle="${mensajes}"/>" --%>
-<!-- 							alt="Sin imagen" width="15%"> -->
-<!-- 					</form> -->
-<%-- 					<a href="modificarJefe.jsp" class="btn btn-info btn-sm"><fmt:message --%>
-<%-- 							key="editarPerfil" bundle="${mensajes}" /></a> --%>
-<!-- 				</div> -->
-<!-- 				<div class="col-md-3"> -->
-<%-- 				<b>${esc.nombreEscuderia} (${esc.pais})</b><br> <b --%>
-<%-- 					id="subtitulo">Año de fundacion: ${esc.anoFundacion}</b> --%>
-<!-- 				</div> -->
-<!-- 					<form action="cerrarSesion.jsp" method="post"> -->
-<!-- 						<input class="btn btn-warning" type="submit" -->
-<%-- 							value="<fmt:message key="cerrarSesion" bundle="${mensajes}"/>" /> --%>
-<!-- 					</form> -->
-<!-- 			</h2> -->

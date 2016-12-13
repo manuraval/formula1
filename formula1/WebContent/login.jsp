@@ -31,6 +31,8 @@
         
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
+        <!-- Hoja de estilos para esta ventana -->
         <link rel="stylesheet" href="./Estilos/index.css">
 
 </head>

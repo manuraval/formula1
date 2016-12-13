@@ -16,6 +16,7 @@
 <!-- Hoja de estilos para esta ventana -->
 <link rel="stylesheet" href="./Estilos/zonaJefes.css">
 </head>
+
 <body>
 	<div class="container">
 		<br> <img class="img-rounded" alt=""

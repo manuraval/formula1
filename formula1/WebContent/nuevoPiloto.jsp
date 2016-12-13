@@ -2,7 +2,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test="${!empty param['esc.nombreEscuderia']}">
+<c:if test="${!empty esc.nombreEscuderia}">
 
 	<c:set var="pilotn"
 		value="${datos.nuevoPiloto(param['numPiloto'],param['nombre'], param['sueldo'], param['debut'],
@@ -26,56 +26,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="shortcut icon" href="./Images/piloto.png" type="image/png" />
 <title><fmt:message key="nuevoPiloto" bundle="${mensajes}" /></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="./Estilos/nuevoPiloto.css">
 
+<!-- JavaScripts para esta ventana -->
 <script src="./js/jquery-2.2.1.min.js"></script>
 <script src="./dist/jquery.validate.min.js"></script>
 <script src="./dist/additional-methods.min.js"></script>
+<script src="./js/nuevoPiloto.js"></script>
 
-<script type="text/javascript">
-
-            $(function () {
-
-                $("#mod").on("click", function () {
-
-                    $.validator.addMethod("metodonombre", function (value, element) {
-                        return this.optional(element) || /^[a-zA-Z," "]+$/i.test(value);
-                    }, "No se Perminten Numeros");
-
-                    $.validator.addMethod("metodonumerocolegiado", function (value, element) {
-                        return this.optional(element) || /^[0-9]{2}\/[0-9]{2}\/[0-9]{5}$/.test(value);
-                    }, "El formato es 00/00/00000");
-
-                    $("#formulario").validate({
-    				// Reglas
-                        rules: {
-                            nColegiado: {required: true, metodonumerocolegiado: true},
-                            nombre: {required: true, metodonombre: true, maxlength: 20},
-                            apellidos: {required: true, metodonombre: true, maxlength: 25},
-                            especialidad: {required: true, lettersonly: true, maxlength: 25},
-                            password: {required: true, maxlength: 15}
-
-                        },
-                        messages: {
-    				//Mensajes
-                            nColegiado: {required: 'El campo es obligatorio', errorClass: "error"},
-                            nombre: {required: 'El campo es obligatorio', errorClass: "error"},
-                            apellidos: {required: 'El campo es obligatorio', errorClass: "error"},
-                            especialidad: {required: 'El campo es obligatorio', lettersonly: 'Solo se permiten letras', errorClass: "error"},
-                            password: {required: 'el campo es obligatorio', errorClass: "error"}
-                        }
-
-
-
-                    });
-                });
-            });
-        </script>
 </head>
 <body>
 
@@ -114,17 +75,15 @@
 						<br>
 						<div class="form-group">
 							<input type="submit" class="btn btn-info" id="mod" name="registrar" value="<fmt:message key="registrarPiloto" bundle="${mensajes}"/>" />
-							<a href="zonaEsc.jsp" class="btn btn-info"><fmt:message key="atras" bundle="${mensajes}" /></a>
+							<input class="col-md-1 col-md-offset-1 btn btn-warning btn-sm" type="button" value="Volver" name="Back2" onclick="history.back()"/>
 						</div>
 					</form>
 				</div>
 			</div>
 			<br>
 		</div>
-
 	</div>
 
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
